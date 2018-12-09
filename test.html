@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #select{
+            width: 150px;
+            height: 40px;
+            font-size: 20px;
+            border:1px solid #808087;
+            border-radius: 5px;
+
+        }
+        option{
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul">
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+    <li>444</li>
+</ul>
+
+<script>
+
+    window.onload = function(){
+        const ul = document.getElementById("ul");
+        const li = ul.getElementsByTagName('li');
+        for(let i=0; i<li.length; i++){
+            li[i].onclick = function(){
+                alert(123);
+            }
+        }
+    }
+    // 父级对事件处理
+    // window.onload = function () {
+    //     const  ul = document.getElementById("ul");
+    //     ul.onclick = function () {
+    //         alert("1234");
+    //     }
+    // }
+    // 事件委托
+    // window.onload = function () {
+    //     const  ul = document.getElementById("ul");
+    //     ul.onclick = function (event) {
+    //         let target = event.target;
+    //         if(target.nodeName.toLowerCase() === 'li'){
+    //             console.log("1234");
+    //             console.log(target.innerHTML);
+    //         }
+    //     }
+    // }
+</script>
+
+<!--<div id="box">-->
+<!--<input type="button" value="添加" id="add">-->
+<!--<input type="button" value="删除" id="remove">-->
+<!--<input type="button" value="选择" id="chose">-->
+<!--<input type="button" value="移动" id="move">-->
+<!--</div>-->
+<!--<script>-->
+    <!--window.onload = function () {-->
+        <!--const  box = document.getElementById("box");-->
+        <!--box.onclick = function (event) {-->
+            <!--let ev = event || window.event;-->
+            <!--let target = ev.srcElement || ev.target;-->
+            <!--switch (target.id.toLowerCase()) {-->
+                <!--case 'add':-->
+                    <!--console.log('添加');-->
+                    <!--break;-->
+                <!--case 'remove':-->
+                    <!--console.log('删除');-->
+                    <!--break;-->
+                <!--case 'chose':-->
+                    <!--console.log('选择');-->
+                    <!--break;-->
+                <!--case 'move':-->
+                    <!--console.log("移动");-->
+                    <!--break;-->
+            <!--}-->
+        <!--}-->
+    <!--};-->
+<!--</script>-->
+
+
+<!--**********************************************-->
+<!--<input type="button" value="添加" id="add">-->
+<!--<ul id="ul">-->
+   <!--<li>111</li>-->
+   <!--<li>222</li>-->
+   <!--<li>333</li>-->
+   <!--<li>444</li>-->
+<!--</ul>-->
+
+<!--<script>-->
+  <!--//  运用事件委托-->
+    <!--window.onload = function () {-->
+        <!--const ul = document.getElementById("ul");-->
+        <!--const li = document.getElementsByTagName('li');-->
+        <!--const btn = document.getElementById("add");-->
+        <!--ul.onmouseover = function (event) {-->
+            <!--let ev = event || window.event;-->
+            <!--console.log(ev);-->
+            <!--let target = ev.target || ev.srcElement;-->
+            <!--if(target.nodeName.toLowerCase() === 'li')-->
+                <!--target.style.backgroundColor = 'red';-->
+        <!--};-->
+        <!--ul.onmouseout= function (event) {-->
+            <!--let ev = event || window.event;-->
+            <!--console.log("out");-->
+            <!--console.log(ev);-->
+            <!--let target = ev.target || ev.srcElement;-->
+            <!--if(target.nodeName.toLowerCase() === 'li')-->
+                <!--target.style.backgroundColor = 'yellow';-->
+        <!--};-->
+
+        <!--btn.onclick = function () {-->
+            <!--let one = document.createElement('li');-->
+            <!--one.innerText = '555';-->
+            <!--ul.appendChild(one);-->
+        <!--};-->
+    <!--};-->
+    <!--//添加新节点，但是得将之前的事件，进行封装，运用到新的结点上-->
+    <!--window.onload = function () {-->
+        <!--const ul = document.getElementById("ul");-->
+        <!--const li = document.getElementsByTagName('li');-->
+        <!--const btn = document.getElementById("add");-->
+        <!--function addNew() {-->
+            <!--for(let i = 0;i<li.length;i++){-->
+                <!--li[i].onmouseover = function () {-->
+                    <!--this.style.backgroundColor = 'red';-->
+                <!--};-->
+                <!--li[i].onmouseout = function () {-->
+                    <!--this.style.backgroundColor ='yellow';-->
+                <!--}-->
+            <!--}-->
+        <!--}-->
+        <!--btn.onclick = function () {-->
+            <!--let one = document.createElement('li');-->
+            <!--one.innerText = '555';-->
+            <!--ul.appendChild(one);-->
+            <!--addNew();-->
+        <!--};-->
+    <!--};-->
+
+
+<!--</script>-->
+</body>
+</html>

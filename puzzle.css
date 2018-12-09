@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #d5d1d7;
+}
+#file{
+    visibility: hidden;
+}
+#select{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 50%;
+    top: 50%;
+    transform: translate( -50% ,-50%);/*垂直水平居中*/
+    border:1px solid #cccccc;
+    border-radius: 8px;
+    background-color: #fdffff;
+    box-shadow: 4px 4px 5px #808087;
+    cursor: pointer;
+    transition: all .7s;
+    display: flex;
+    align-items: center;/*子元素居中*/
+}
+#select i{
+    font-size: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+#gameArea{
+    position: absolute;
+    margin-top: 40px;
+    left: 100%; /*初始位置在屏幕外，动画居中*/
+    transition: all .7s ease;
+    text-align: center;
+    z-index: -1;
+}
+#imgArea{
+    position: relative; /*图片区域填满*/
+    width: 100%;
+    height: 100%;
+}
+#imgArea .imgCell {
+    border: 1.5px solid #fff;
+    border-radius: 4px;
+    margin: 4px auto;
+    position: absolute;
+    transition: left 0.4s ease-in-out, top 0.4s ease-in-out;
+}
+#gamesters {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    border-radius: 6px;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    color: #fff;
+    margin: 15px auto 30px ;/*距图片框*/
+    cursor: pointer;
+}
+#gamesters:hover {
+    background-color: #449d44;
+    border-color: #398439;
+}
+#selects{
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    border:1px solid #808087;
+    border-radius: 5px;
+}
+option{
+    line-height: 40px;
+    text-align: center;
+}
